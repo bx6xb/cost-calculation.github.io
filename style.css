@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: arial;
+}
+caption {
+  font-size: 24px;
+  margin: 20px;
+}
+table {
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 1000px;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+#calculation {
+  margin-bottom: 40px;
+}
+input {
+  display: block;
+  margin: 0 auto;
+}

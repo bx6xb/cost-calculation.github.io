@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cost calculation</title>
+  </head>
+  <body>
+    <table id="calculation">
+      <caption>
+        Cost calculation
+      </caption>
+      <thead>
+        <tr>
+          <th>Currency</th>
+          <th>Purchase</th>
+          <th>Selling price without commission</th>
+          <th>Selling price</th>
+          <th>Profit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Tenge</th>
+          <th>
+            <input id="table-input" type="number" />
+          </th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Rubles</th>
+          <td></td>
+          <td></td>
+          <td style="background-color: green"></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>% of profit</th>
+          <th>Selling commission</th>
+          <th>Withdrawal commission</th>
+          <th>Ruble's exchange rate</th>
+        </tr>
+        <tr>
+          <td><input id="profit-percentage" type="number" value="0.2" /></td>
+          <td><input id="selling-comm" type="number" value="0.05" /></td>
+          <td><input id="withdrawal-comm" type="number" value="0.05" /></td>
+          <td><input id="exchange-rate" type="number" value="5.42" /></td>
+        </tr>
+      </thead>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>

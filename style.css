@@ -5,24 +5,20 @@
   font-family: arial;
 }
 caption {
-  font-size: 24px;
-  margin: 20px;
+  font-size: 30px;
+  margin: 10px;
 }
 table {
-  margin: 0 auto;
   border: 1px solid black;
-  width: 1000px;
+  margin: 20px auto;
+  border-collapse: collapse;
 }
 th,
 td {
-  border: 1px solid black;
   padding: 10px;
-  text-align: center;
+  border: 1px solid black;
+  min-width: auto;
 }
-#calculation {
-  margin-bottom: 40px;
-}
-input {
-  display: block;
-  margin: 0 auto;
+thead {
+  background-color: gray;
 }

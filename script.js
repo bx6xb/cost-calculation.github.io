@@ -1,50 +1,41 @@
-function countTableValues() {
-  td[0].innerHTML = (
-    +input.value * +profitPercentage.value +
-    +input.value
+var currency = document.getElementById("currency");
+var purchase = document.getElementById("purchase");
+var spwc = document.getElementById("sale-price-without-commission");
+var sp = document.getElementById("sale-price");
+var profit = document.getElementById("profit");
+var profitPercentage = document.getElementById("profit-percentage");
+var salesCommission = document.getElementById("sales-commission");
+var withdrawalFee = document.getElementById("withdrawal-fee");
+
+function recountNumbers() {
+  spwc.innerHTML = (
+    +purchase.value +
+    +purchase.value * +profitPercentage.value
   ).toFixed(2);
-  td[1].innerHTML = (
-    (+input.value * +profitPercentage.value + +input.value) /
-    (1 - +sellingComm.value) /
-    (1 - +withdrawalComm.value)
+  sp.innerHTML = (
+    (+purchase.value * +profitPercentage.value + +purchase.value) /
+    (1 - +salesCommission.value) /
+    (1 - +withdrawalFee.value)
   ).toFixed(2);
-  td[2].innerHTML = (td[0].innerHTML - +input.value).toFixed(2);
-  td[3].innerHTML = (+input.value / +exchangeRate.value).toFixed(2);
-  td[4].innerHTML = (
-    +td[3].innerHTML * +profitPercentage.value +
-    +td[3].innerHTML
-  ).toFixed(2);
-  td[5].innerHTML = (
-    (+td[3].innerHTML * +profitPercentage.value + +td[3].innerHTML) /
-    (1 - +sellingComm.value) /
-    (1 - +withdrawalComm.value)
-  ).toFixed(2);
-  td[6].innerHTML = (+td[4].innerHTML - +td[3].innerHTML).toFixed(2);
+  profit.innerHTML = (+spwc.innerHTML - +purchase.value).toFixed(2);
 }
 
-var td = document.getElementsByTagName("td");
-
-var input = document.getElementById("table-input");
-input.addEventListener("change", function () {
-  countTableValues();
+currency.addEventListener("change", function () {
+  recountNumbers();
 });
 
-var profitPercentage = document.getElementById("profit-percentage");
-profitPercentage.addEventListener("change", function () {
-  countTableValues();
+purchase.addEventListener("input", function () {
+  recountNumbers();
 });
 
-var sellingComm = document.getElementById("selling-comm");
-sellingComm.addEventListener("change", function () {
-  countTableValues();
+profitPercentage.addEventListener("input", function () {
+  recountNumbers();
 });
 
-var withdrawalComm = document.getElementById("withdrawal-comm");
-withdrawalComm.addEventListener("change", function () {
-  countTableValues();
+salesCommission.addEventListener("input", function () {
+  recountNumbers();
 });
 
-var exchangeRate = document.getElementById("exchange-rate");
-exchangeRate.addEventListener("change", function () {
-  countTableValues();
+withdrawalFee.addEventListener("input", function () {
+  recountNumbers();
 });
